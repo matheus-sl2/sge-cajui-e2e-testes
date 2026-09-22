@@ -25,6 +25,9 @@ jobs:
       - name: Validar composer.json
         run: composer validate --strict
 
+      - name: Configurar arquivo de ambiente
+        run: cp .env.example .env
+
       - name: Instalar dependências
         run: composer install --prefer-dist --no-progress
 

@@ -33,6 +33,9 @@
         "build-suite": "codecept build"
     },
     "config": {
+        "platform": {
+            "php": "8.2.0"
+        },
         "optimize-autoloader": true,
         "sort-packages": true,
         "allow-plugins": {}
