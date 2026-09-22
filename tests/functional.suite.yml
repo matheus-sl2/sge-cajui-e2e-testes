@@ -1,0 +1,6 @@
+actor: FunctionalTester
+modules:
+    enabled:
+        - PhpBrowser:
+            url: '%TEST_BASE_URL%'
+        - Asserts

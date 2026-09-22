@@ -1,0 +1,32 @@
+name: E2E Tests (Codeception)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-and-lint:
+    name: Validate Composer & Codeception Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, pdo, pdo_pgsql, curl, json
+          tools: composer:v2
+
+      - name: Validar composer.json
+        run: composer validate --strict
+
+      - name: Instalar dependências
+        run: composer install --prefer-dist --no-progress
+
+      - name: Gerar actors do Codeception
+        run: vendor/bin/codecept build

@@ -1,0 +1,14 @@
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: '%TEST_BASE_URL%'
+            host: '%WEBDRIVER_HOST%'
+            port: '%WEBDRIVER_PORT%'
+            browser: '%WEBDRIVER_BROWSER%'
+            wait: 10
+            window_size: 1920x1080
+            capabilities:
+                acceptInsecureCerts: true
+        - \Tests\Support\Helper\Acceptance
+        - Asserts

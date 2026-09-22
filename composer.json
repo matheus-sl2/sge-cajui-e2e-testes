@@ -1,0 +1,40 @@
+{
+    "name": "matheus-sl/sge-cajui-e2e-testes",
+    "description": "Suíte de testes automatizados End-to-End (E2E) para o Sistema de Gerenciamento de Estágios (SGE) do Cajuí",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "matheus-sl",
+            "email": "msl3@aluno.ifnmg.edu.br"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "codeception/codeception": "^5.1",
+        "codeception/module-asserts": "^3.0",
+        "codeception/module-phpbrowser": "^3.0",
+        "codeception/module-rest": "^3.0",
+        "codeception/module-webdriver": "^4.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Support\\": "tests/Support/"
+        }
+    },
+    "scripts": {
+        "test": "codecept run",
+        "test:acceptance": "codecept run acceptance",
+        "test:report": "codecept run --html",
+        "test:steps": "codecept run --steps",
+        "build-suite": "codecept build"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {}
+    }
+}

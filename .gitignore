@@ -1,0 +1,30 @@
+# Dependências do Composer
+/vendor/
+composer.phar
+
+# Arquivos de ambiente e segredos locais
+.env
+.env.local
+
+# Saída de relatórios e artefatos de testes
+tests/_output/*
+!tests/_output/.gitkeep
+
+# IDEs e Editores
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cache e Logs
+*.log
+.phpunit.result.cache
+.cache/
+
+# Sistema Operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
