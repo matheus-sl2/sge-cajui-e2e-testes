@@ -13,9 +13,10 @@ class SmokeCest
     /**
      * Valida se a página de login carrega com sucesso e exibe os campos principais.
      */
-    public function verificarPaginaDeLoginDisponivel(AcceptanceTester $I, LoginPage $loginPage): void
+    public function verificarPaginaDeLoginDisponivel(AcceptanceTester $I): void
     {
         $I->wantTo('verificar se a tela de login do Cajuí está acessível');
+        $loginPage = new LoginPage($I);
         $loginPage->open();
 
         $I->seeInTitle('Cajuí');
@@ -27,9 +28,10 @@ class SmokeCest
     /**
      * Valida se a tentativa de login sem preencher campos exibe validação.
      */
-    public function verificarValidacaoCamposVazios(AcceptanceTester $I, LoginPage $loginPage): void
+    public function verificarValidacaoCamposVazios(AcceptanceTester $I): void
     {
         $I->wantTo('verificar validação de campos obrigatórios ao submeter formulário em branco');
+        $loginPage = new LoginPage($I);
         $loginPage->open();
         $I->click(LoginPage::$loginButton);
 

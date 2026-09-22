@@ -1,4 +1,5 @@
 actor: FunctionalTester
+bootstrap: false
 modules:
     enabled:
         - PhpBrowser:

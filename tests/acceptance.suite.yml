@@ -1,4 +1,5 @@
 actor: AcceptanceTester
+bootstrap: false
 modules:
     enabled:
         - WebDriver:
