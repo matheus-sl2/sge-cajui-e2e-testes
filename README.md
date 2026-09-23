@@ -123,21 +123,6 @@ composer run test:report
 
 ---
 
-## 🌐 Como Publicar este Projeto no seu GitHub
-
-1. Acesse o seu GitHub e crie um novo repositório vazio: [github.com/new](https://github.com/new)
-   - Nome sugerido: `sge-cajui-e2e-testes`
-   - **Não** marque para criar README, .gitignore ou licença (já estão configurados aqui).
-
-2. No terminal, dentro desta pasta `sge-cajui-e2e-testes`, adicione o repositório remoto e envie o código:
-   ```bash
-   git remote add origin https://github.com/<seu-usuario>/sge-cajui-e2e-testes.git
-   git branch -M main
-   git push -u origin main
-   ```
-
----
-
 ## 💡 Boas Práticas Adotadas
 
 - **Page Object Model (POM)**: As páginas e seletores ficam centralizados em `tests/Support/Page/`, evitando duplicação de seletores e facilitando manutenção caso o layout do Cajuí sofra alterações.
