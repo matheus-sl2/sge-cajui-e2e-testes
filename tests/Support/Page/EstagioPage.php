@@ -12,21 +12,24 @@ class EstagioPage
     /**
      * Rotas principais do módulo gestaoestagio
      */
-    public static string $URL_LISTA_ESTAGIOS = '/gestaoestagio/estagio/index';
-    public static string $URL_NOVO_ESTAGIO   = '/gestaoestagio/novo-estagio/index';
-    public static string $URL_CONVENIOS      = '/gestaoestagio/convenio/index';
-    public static string $URL_EMPRESAS       = '/gestaoestagio/empresa/index';
+    public static string $URL_LISTA_ESTAGIOS = '/index.php/gestaoestagio/estagio';
+    public static string $URL_NOVO_ESTAGIO   = '/index.php/gestaoestagio/novo-estagio';
+    public static string $URL_CONVENIOS      = '/index.php/gestaoestagio/convenio';
+    public static string $URL_EMPRESAS       = '/index.php/gestaoestagio/empresa';
 
     /**
-     * Seletores comuns do módulo
+     * Seletores do grid de gerenciamento de estágios
      */
-    public static string $gridEstagios   = '#grid-estagios';
-    public static string $btnNovoEstagio = 'a[href*="novo-estagio"]';
-    public static string $pageHeader     = '.content-header h1';
+    public static string $gridContainer   = '#pjax-estagio-index';
+    public static string $filtroAluno     = 'input[name="EstagioSearch[aluno]"]';
+    public static string $filtroEmpresa   = 'input[name="EstagioSearch[empresa]"]';
+    public static string $filtroSituacao  = 'select[name="EstagioSearch[situacao_id]"]';
+    public static string $btnNovoEstagio  = 'a[href*="novo-estagio"]';
+    public static string $pageTitle       = 'Estágios';
 
-    protected AcceptanceTester $tester;
+    protected mixed $tester;
 
-    public function __construct(AcceptanceTester $I)
+    public function __construct(mixed $I)
     {
         $this->tester = $I;
     }
@@ -37,6 +40,24 @@ class EstagioPage
     public function openLista(): self
     {
         $this->tester->amOnPage(self::$URL_LISTA_ESTAGIOS);
+        return $this;
+    }
+
+    /**
+     * Filtra a listagem por nome do discente
+     */
+    public function filtrarPorAluno(string $nomeAluno): self
+    {
+        $this->tester->amOnPage(self::$URL_LISTA_ESTAGIOS . '?EstagioSearch[aluno]=' . urlencode($nomeAluno));
+        return $this;
+    }
+
+    /**
+     * Filtra a listagem por situação do estágio
+     */
+    public function filtrarPorSituacao(string $situacaoId): self
+    {
+        $this->tester->amOnPage(self::$URL_LISTA_ESTAGIOS . '?EstagioSearch[situacao_id]=' . urlencode($situacaoId));
         return $this;
     }
 }
