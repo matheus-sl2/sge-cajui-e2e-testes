@@ -103,4 +103,36 @@ class LoginPage
         $password = $_ENV['TEST_DEFAULT_PASSWORD'] ?? '123';
         return $this->login($username, $password);
     }
+
+    /**
+     * Realiza login como Supervisor de Empresa
+     */
+    public function loginAsSupervisorEmpresa(): self
+    {
+        $username = $_ENV['TEST_SUPERVISOR_EMPRESA_LOGIN'] ?? 'laf';
+        $password = $_ENV['TEST_DEFAULT_PASSWORD'] ?? '123';
+        return $this->login($username, $password);
+    }
+
+    /**
+     * Realiza login como Responsável Legal de Empresa
+     */
+    public function loginAsResponsavelEmpresa(): self
+    {
+        $username = $_ENV['TEST_RESP_EMPRESA_LOGIN'] ?? 'jgdf';
+        $password = $_ENV['TEST_DEFAULT_PASSWORD'] ?? '123';
+        return $this->login($username, $password);
+    }
+
+    // Aliases para compatibilidade de nomenclatura em português
+    public function fazerLoginComoCoordEstagio(): self
+    {
+        return $this->loginAsCoordenadorEstagio();
+    }
+
+    public function fazerLoginComoSupervisorEmpresa(): self
+    {
+        return $this->loginAsSupervisorEmpresa();
+    }
 }
+
