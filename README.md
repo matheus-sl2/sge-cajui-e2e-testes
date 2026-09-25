@@ -13,8 +13,7 @@ Suíte de testes automatizados ponta a ponta (**End-to-End**) e funcionais desen
 ## 📌 Observação sobre Credenciais e Dados de Teste
 
 > [!NOTE]
-> - **Dados Institucionais (Universais):** Os usuários de discentes, docentes e coordenadores seguem a convenção padrão dos seeders institucionais do Cajuí (`nome.sobrenome123456`) e são universais em qualquer instalação padrão do sistema.
-> - **Dados de Empresas (Locais):** As contas de Responsável Legal (`TEST_RESP_EMPRESA_LOGIN`) e Supervisor de Empresa (`TEST_SUPERVISOR_EMPRESA_LOGIN`), assim como as empresas concedentes, convênios, estágios e seguros cadastrados, foram criados na base local do autor. Ao executar em outro ambiente, basta atualizar esses dois logins no seu `.env` com os registros correspondentes do seu banco local.
+> - **Dados Locais:** As contas de Responsável Legal (`TEST_RESP_EMPRESA_LOGIN`) e Supervisor de Empresa (`TEST_SUPERVISOR_EMPRESA_LOGIN`), assim como as empresas concedentes, convênios, estágios e seguros cadastrados, são criados na base local do autor. Ao executar em outro ambiente, basta atualizar esses dois logins no seu `.env` com os registros correspondentes do seu banco local.
 
 ---
 
