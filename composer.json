@@ -26,10 +26,12 @@
         }
     },
     "scripts": {
-        "test": "codecept run",
+        "test": "codecept run functional --html",
+        "test:all": "codecept run --html",
         "test:acceptance": "codecept run acceptance",
-        "test:report": "codecept run --html",
-        "test:steps": "codecept run --steps",
+        "test:functional": "codecept run functional --html",
+        "test:report": "codecept run functional --html",
+        "test:steps": "codecept run functional --steps",
         "build-suite": "codecept build"
     },
     "config": {
